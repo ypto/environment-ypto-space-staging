@@ -9,4 +9,4 @@ dependencies:
   version: 2.3.89
 - name: ico
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.31
+  version: 0.0.32
