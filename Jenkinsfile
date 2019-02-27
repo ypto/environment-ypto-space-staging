@@ -1,5 +1,3 @@
-def gitMessage = ''
-
 pipeline {
   options {
     disableConcurrentBuilds()
@@ -9,12 +7,13 @@ pipeline {
   }
   environment {
     DEPLOY_NAMESPACE = "staging"
+    GIT_MESSAGE = ""
   }
   stages {
     stage('Validate Environment') {
       steps {
         script {
-            gitMessage = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
+            env.GIT_MESSAGE = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
         }
         container('maven') {
           dir('env') {
@@ -48,7 +47,7 @@ pipeline {
               messageLink: '',
               text: 'Success',
               thumbUrl: '',
-              title: "Commit: ${gitMessage}",
+              title: "Commit: ${env.GIT_MESSAGE}",
               titleLink: '',
               titleLinkDownload: '',
               videoUrl: ''
@@ -69,7 +68,7 @@ pipeline {
               messageLink: '',
               text: 'Failure',
               thumbUrl: '',
-              title: "Commit: ${gitMessage}",
+              title: "Commit: ${env.GIT_MESSAGE}",
               titleLink: '',
               titleLinkDownload: '',
               videoUrl: ''
