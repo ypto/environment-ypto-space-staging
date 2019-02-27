@@ -12,9 +12,9 @@ pipeline {
   stages {
     stage('Validate Environment') {
       steps {
+        env.GIT_MESSAGE = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
         container('maven') {
           dir('env') {
-            env.GIT_MESSAGE = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
             sh 'jx step helm build'
           }
         }
