@@ -7,7 +7,7 @@ pipeline {
   }
   environment {
     DEPLOY_NAMESPACE = "staging"
-    GIT_MESSAGE = ""
+    GIT_MESSAGE = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
   }
   stages {
     stage('Validate Environment') {
@@ -34,9 +34,6 @@ pipeline {
   }
   post {
     success {
-        script {
-              env.GIT_MESSAGE = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
-          }
           rocketSend attachments: [
             [
               audioUrl: '',
@@ -58,9 +55,6 @@ pipeline {
           rawMessage: true
         }
         failure {
-          script {
-            env.GIT_MESSAGE = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
-          }
           rocketSend attachments: [
             [
               audioUrl: '',
