@@ -12,9 +12,6 @@ pipeline {
   stages {
     stage('Validate Environment') {
       steps {
-        script {
-            env.GIT_MESSAGE = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
-        }
         container('maven') {
           dir('env') {
             sh 'jx step helm build'
@@ -37,6 +34,9 @@ pipeline {
   }
   post {
     success {
+        script {
+              env.GIT_MESSAGE = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
+          }
           rocketSend attachments: [
             [
               audioUrl: '',
@@ -58,6 +58,9 @@ pipeline {
           rawMessage: true
         }
         failure {
+          script {
+            env.GIT_MESSAGE = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
+          }
           rocketSend attachments: [
             [
               audioUrl: '',
