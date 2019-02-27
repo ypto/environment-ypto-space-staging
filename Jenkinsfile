@@ -7,12 +7,10 @@ pipeline {
   }
   environment {
     DEPLOY_NAMESPACE = "staging"
-    GIT_MESSAGE = ""
   }
   stages {
     stage('Validate Environment') {
       steps {
-        env.GIT_MESSAGE = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
         container('maven') {
           dir('env') {
             sh 'jx step helm build'
@@ -35,6 +33,7 @@ pipeline {
   }
   post {
     success {
+          def git_message = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
           rocketSend attachments: [
             [
               audioUrl: '',
@@ -45,7 +44,7 @@ pipeline {
               messageLink: '',
               text: 'Success',
               thumbUrl: '',
-              title: "Commit: ${env.GIT_MESSAGE}",
+              title: "Commit: ${git_message}",
               titleLink: '',
               titleLinkDownload: '',
               videoUrl: ''
@@ -56,6 +55,7 @@ pipeline {
           rawMessage: true
         }
         failure {
+          def git_message = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
           rocketSend attachments: [
             [
               audioUrl: '',
@@ -66,7 +66,7 @@ pipeline {
               messageLink: '',
               text: 'Failure',
               thumbUrl: '',
-              title: "Commit: ${env.GIT_MESSAGE}",
+              title: "Commit: ${git_message}",
               titleLink: '',
               titleLinkDownload: '',
               videoUrl: ''
