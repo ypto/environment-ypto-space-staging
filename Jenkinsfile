@@ -51,7 +51,7 @@ pipeline {
               videoUrl: ''
             ]
           ],
-          channel: 'staging'
+          channel: 'staging',
           message: "Deploy into Staging #${env.BUILD_NUMBER} finished - (<${env.BUILD_URL}|Open>)",
           rawMessage: true
         }
@@ -72,7 +72,7 @@ pipeline {
               videoUrl: ''
             ]
           ],
-          channel: 'staging'
+          channel: 'staging',
           message: "Deploy into Staging #${env.BUILD_NUMBER} finished - (<${env.BUILD_URL}|Open>)",
           rawMessage: true
         }
