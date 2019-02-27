@@ -44,7 +44,7 @@ pipeline {
               messageLink: '',
               text: 'Success',
               thumbUrl: '',
-              title: "Commit: ${env.GIT_MESSAGE}",
+              title: "Changes: ${env.GIT_MESSAGE}",
               titleLink: '',
               titleLinkDownload: '',
               videoUrl: ''
@@ -65,7 +65,7 @@ pipeline {
               messageLink: '',
               text: 'Failure',
               thumbUrl: '',
-              title: "Commit: ${env.GIT_MESSAGE}",
+              title: "Changes: ${env.GIT_MESSAGE}",
               titleLink: '',
               titleLinkDownload: '',
               videoUrl: ''
