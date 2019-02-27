@@ -7,7 +7,7 @@ pipeline {
   }
   environment {
     DEPLOY_NAMESPACE = "staging"
-    GIT_MESSAGE = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStatus: true)
+    GIT_MESSAGE = sh (script:'git log --oneline -1 ${GIT_COMMIT}', returnStdout: true)
   }
   stages {
     stage('Validate Environment') {
