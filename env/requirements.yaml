@@ -10,3 +10,6 @@ dependencies:
 - name: ico
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.107
+- name: main
+  repository: http://jenkins-x-chartmuseum:8080
+  version: 0.0.2
