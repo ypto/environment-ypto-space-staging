@@ -42,4 +42,4 @@ dependencies:
   version: 0.0.8
 - name: ws
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.22
+  version: 0.0.23
