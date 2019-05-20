@@ -5,11 +5,14 @@ dependencies:
 - name: card-api
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.2
-- alias: expose
+- name: card-web
+  repository: http://jenkins-x-chartmuseum:8080
+  version: 0.0.2
+- alias: cleanup
   name: exposecontroller
   repository: http://chartmuseum.jenkins-x.io
   version: 2.3.89
-- alias: cleanup
+- alias: expose
   name: exposecontroller
   repository: http://chartmuseum.jenkins-x.io
   version: 2.3.89
