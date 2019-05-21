@@ -4,7 +4,7 @@ dependencies:
   version: 0.0.7
 - name: card-api
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.2
+  version: 0.0.4
 - name: card-web
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.2
