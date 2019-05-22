@@ -24,7 +24,7 @@ dependencies:
   version: 0.0.3
 - name: pay-admin
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.11
+  version: 0.0.12
 - name: pay-api
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.9
