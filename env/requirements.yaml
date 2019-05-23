@@ -48,7 +48,7 @@ dependencies:
   version: 0.0.18
 - name: trade-web
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.15
+  version: 0.0.16
 - name: ws
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.32
