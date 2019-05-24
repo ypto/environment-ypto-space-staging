@@ -30,7 +30,7 @@ dependencies:
   version: 0.0.17
 - name: pay-web
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.10
+  version: 0.0.11
 - name: space-admin
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.35
