@@ -45,7 +45,7 @@ dependencies:
   version: 0.0.21
 - name: trade-api
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.32
+  version: 0.0.33
 - name: trade-web
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.41
