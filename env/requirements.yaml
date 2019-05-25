@@ -39,7 +39,7 @@ dependencies:
   version: 0.0.36
 - name: space-web
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.19
+  version: 0.0.21
 - name: trade-admin
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.21
