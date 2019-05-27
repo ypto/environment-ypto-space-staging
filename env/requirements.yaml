@@ -36,7 +36,7 @@ dependencies:
   version: 0.0.40
 - name: space-api
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.42
+  version: 0.0.43
 - name: space-web
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.25
