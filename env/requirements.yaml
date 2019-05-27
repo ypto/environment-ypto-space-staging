@@ -7,7 +7,7 @@ dependencies:
   version: 0.0.13
 - name: card-web
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.14
+  version: 0.0.15
 - alias: cleanup
   name: exposecontroller
   repository: http://chartmuseum.jenkins-x.io
