@@ -33,7 +33,7 @@ dependencies:
   version: 0.0.15
 - name: space-admin
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.45
+  version: 0.0.50
 - name: space-api
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.45
